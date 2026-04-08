@@ -1,4 +1,4 @@
-# react-native-controlled-input
+# @ronas-it/react-native-controlled-input
 
 A controlled React Native input that lets you format and constrain the value exactly how you want in JS, while keeping the displayed text in sync without invalid characters flashing in the field.
 
@@ -8,12 +8,12 @@ With a regular controlled `TextInput`, native input is applied first, then JS re
 
 That means invalid characters can still flash in the field for a moment.
 
-`react-native-controlled-input` is built for this exact case: you decide what text is valid, and the displayed value stays driven by `value`.
+`@ronas-it/react-native-controlled-input` is built for this exact case: you decide what text is valid, and the displayed value stays driven by `value`.
 
 ## Install
 
 ```sh
-npm install react-native-controlled-input
+npm install @ronas-it/react-native-controlled-input
 ```
 
 Requires React Native New Architecture / Fabric.
@@ -26,7 +26,7 @@ import { StyleSheet } from 'react-native';
 import {
   ControlledInputView,
   type ControlledInputViewRef,
-} from 'react-native-controlled-input';
+} from '@ronas-it/react-native-controlled-input';
 
 export function Example() {
   const [value, setValue] = useState('');

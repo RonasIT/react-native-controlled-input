@@ -1,5 +1,5 @@
 {
-  "name": "react-native-controlled-input",
+  "name": "@ronas-it/react-native-controlled-input",
   "version": "0.1.0",
   "description": "React Native controlled TextInput with strict value sync (Fabric)",
   "main": "./lib/module/index.js",

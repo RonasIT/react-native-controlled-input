@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "react-native-controlled-input": ["./src/index"]
+      "@ronas-it/react-native-controlled-input": ["./src/index"]
     },
     "customConditions": ["react-native-strict-api"],
     "esModuleInterop": true,
