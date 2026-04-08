@@ -35,11 +35,12 @@
     "example": "yarn workspace react-native-controlled-input-example",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
     "prepare": "bob build",
+    "build": "bob build",
     "typecheck": "tsc",
     "lint": "npx tsc && npx eslint ./",
     "format": "npx prettier --write . && npm run lint -- --fix",
     "test": "jest",
-    "release": "release-it --only-version"
+    "release": "release-it"
   },
   "keywords": [
     "react-native",
@@ -138,6 +139,7 @@
     ]
   },
   "release-it": {
+    "increment": false,
     "git": {
       "commitMessage": "chore: release ${version}",
       "tagName": "v${version}"
