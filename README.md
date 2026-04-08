@@ -92,6 +92,10 @@ Commonly used supported styles:
 
 Implementation differs internally between platforms, but usage is the same for library consumers.
 
+## Fonts
+
+In Expo projects, **`fontFamily` on this input only applies when the font is linked for native use**. Relying on runtime loading alone (`useFonts` / `loadAsync`) is often not enough here; use the **expo-font config plugin** so fonts are embedded at build time. See [Expo Font — Configuration in app config](https://docs.expo.dev/versions/latest/sdk/font/#configuration-in-app-config).
+
 ## Ref
 
 - `focus()`
