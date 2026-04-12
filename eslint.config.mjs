@@ -17,7 +17,6 @@ export default [
       '**/coverage',
       'example/ios/Pods',
       '**/.turbo',
-      '.yarn',
     ],
   },
   eslintConfigPrettier,

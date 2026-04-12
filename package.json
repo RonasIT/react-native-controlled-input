@@ -32,7 +32,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-controlled-input-example",
+    "example": "npm run start -w react-native-controlled-input-example",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
     "prepare": "bob build",
     "build": "bob build",
@@ -94,7 +94,6 @@
   "workspaces": [
     "example"
   ],
-  "packageManager": "yarn@4.11.0",
   "react-native-builder-bob": {
     "source": "src",
     "output": "lib",

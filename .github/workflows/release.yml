@@ -16,20 +16,17 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: '22'
-          cache: 'yarn'
+          cache: 'npm'
           registry-url: 'https://registry.npmjs.org/'
 
-      - name: Enable Corepack
-        run: corepack enable
-
       - name: Install dependencies
-        run: yarn install --immutable
+        run: npm ci
 
       - name: Build package
         run: |
-          if node -e "process.exit(require('./package.json').scripts?.build ? 0 : 1)"; then yarn build; fi
+          if node -e "process.exit(require('./package.json').scripts?.build ? 0 : 1)"; then npm run build; fi
 
       - name: Publish to NPM
-        run: yarn run release
+        run: npm run release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
