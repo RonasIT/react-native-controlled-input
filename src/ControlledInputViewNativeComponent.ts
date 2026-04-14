@@ -25,6 +25,7 @@ export interface BlurEvent {
 export interface InputStyle {
   color?: ColorValue;
   fontSize?: Double;
+  height?: Double;
   fontFamily?: string;
   paddingTop?: Double;
   paddingBottom?: Double;
