@@ -2,6 +2,20 @@
 
 A controlled React Native input that lets you format and constrain the value exactly how you want in JS, while keeping the displayed text in sync without invalid characters flashing in the field.
 
+**`ControlledInputView`** (left) vs React Native **`TextInput`** (right), same JS formatting: with `TextInput`, rejected characters and intermediate states often flash until the filtered `value` is applied.
+
+### Promo / invite code (ABCD-1234)
+
+| ControlledInputView | TextInput |
+| :-----------------: | :-------: |
+| <img src="assets/promo-code-controlled-input.gif" alt="ControlledInputView promo code" width="325"> | <img src="./assets/promo-code-default-input.gif" alt="TextInput promo code" width="325"> |
+
+### Card expiry (MM/YY)
+
+| ControlledInputView | TextInput |
+| :-----------------: | :-------: |
+| <img src="assets/date-controlled-input.gif" alt="ControlledInputView date" width="325"> | <img src="./assets/date-default-input.gif" alt="TextInput date" width="325"> |
+
 ## Problem
 
 With a regular controlled `TextInput`, native input is applied first, then JS receives the change, filters it, and sends the next `value` back.
@@ -9,6 +23,7 @@ With a regular controlled `TextInput`, native input is applied first, then JS re
 That means invalid characters can still flash in the field for a moment.
 
 `@ronas-it/react-native-controlled-input` is built for this exact case: you decide what text is valid, and the displayed value stays driven by `value`.
+
 
 ## Install
 
