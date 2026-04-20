@@ -128,7 +128,7 @@ using namespace facebook::react;
     const auto eventEmitter = std::static_pointer_cast<const ControlledInputViewEventEmitter>(_eventEmitter);
     const char *utf8Value = value.UTF8String ?: "";
 
-    eventEmitter->onTextChange(ControlledInputViewEventEmitter::OnTextChange {
+    eventEmitter->onChangeText(ControlledInputViewEventEmitter::OnChangeText {
         .value = std::string(utf8Value),
     });
 }

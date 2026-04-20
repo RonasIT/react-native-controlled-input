@@ -33,9 +33,7 @@ class ControlledInputViewManager : SimpleViewManager<ControlledInputView>(),
 
   @ReactProp(name = "value")
   override fun setValue(view: ControlledInputView, value: String?) {
-    value?.let {
-      view.viewModel.setValue(value)
-    }
+    view.viewModel.setValue(value ?: "")
   }
 
   @ReactProp(name = "placeholder")
@@ -101,7 +99,7 @@ class ControlledInputViewManager : SimpleViewManager<ControlledInputView>(),
   }
 
   override fun getExportedCustomDirectEventTypeConstants(): MutableMap<String, Any> = mutableMapOf(
-    TextChangeEvent.EVENT_NAME to MapBuilder.of("registrationName", "onTextChange"),
+    TextChangeEvent.EVENT_NAME to MapBuilder.of("registrationName", "onChangeText"),
     FocusEvent.EVENT_NAME to MapBuilder.of("registrationName", "onFocus"),
     BlurEvent.EVENT_NAME to MapBuilder.of("registrationName", "onBlur")
   )

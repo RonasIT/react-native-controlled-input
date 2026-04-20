@@ -38,10 +38,10 @@ type ForwardedTextInputProps = Pick<
 
 export type ControlledInputViewProps = Omit<
   NativeProps,
-  'inputStyle' | 'onTextChange' | keyof ForwardedTextInputProps
+  'inputStyle' | 'onChangeText' | keyof ForwardedTextInputProps
 > &
   ForwardedTextInputProps & {
-    onTextChange?: (value: string) => void;
+    onChangeText?: (value: string) => void;
   };
 
 type ControlledInputFocusEvent = Parameters<
@@ -90,7 +90,7 @@ export const ControlledInputView = memo(
     (
       {
         style,
-        onTextChange,
+        onChangeText,
         onFocus,
         onBlur,
         selectionColor,
@@ -176,8 +176,8 @@ export const ControlledInputView = memo(
       const handleTextChange = (e: {
         nativeEvent: Readonly<TextChangeEvent>;
       }): void => {
-        if (onTextChange) {
-          onTextChange(e.nativeEvent.value);
+        if (onChangeText) {
+          onChangeText(e.nativeEvent.value);
         }
       };
 
@@ -213,7 +213,7 @@ export const ControlledInputView = memo(
           selectionColor={selectionColor}
           style={viewStyle}
           inputStyle={inputStyle}
-          onTextChange={handleTextChange}
+          onChangeText={handleTextChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
           ref={nativeRef}

@@ -280,7 +280,7 @@ class TextChangeEvent(
   }
 
   companion object {
-    const val EVENT_NAME = "onTextChange"
+    const val EVENT_NAME = "onChangeText"
   }
 }
 

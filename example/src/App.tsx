@@ -39,7 +39,7 @@ export default function App(): ReactElement {
         value={value}
         ref={inputRef}
         placeholder='Type something...'
-        onTextChange={handleValueChange}
+        onChangeText={handleValueChange}
         style={[styles.input, isFocused && styles.focusedInput]}
         onFocus={handleFocus}
         onBlur={handleBlur}

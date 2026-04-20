@@ -47,7 +47,7 @@ export interface NativeProps extends ViewProps {
   keyboardType?: string;
   returnKeyType?: string;
   inputStyle?: InputStyle;
-  onTextChange?: BubblingEventHandler<Readonly<TextChangeEvent>>;
+  onChangeText?: BubblingEventHandler<Readonly<TextChangeEvent>>;
   onFocus?: BubblingEventHandler<Readonly<FocusEvent>>;
   onBlur?: BubblingEventHandler<Readonly<BlurEvent>>;
 }

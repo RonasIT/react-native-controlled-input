@@ -113,10 +113,6 @@ public class RNControlledInput: UIView, UITextFieldDelegate {
         }
 
         textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
-
-        if let color = textColor {
-            textField.textColor = color
-        }
     }
 
     public func textFieldDidBeginEditing(_ textField: UITextField) {
