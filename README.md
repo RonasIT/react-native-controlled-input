@@ -8,13 +8,13 @@ A controlled React Native input that lets you format and constrain the value exa
 
 | ControlledInputView | TextInput |
 | :-----------------: | :-------: |
-| <img src="assets/promo-code-controlled-input.gif" alt="ControlledInputView promo code" width="325"> | <img src="./assets/promo-code-default-input.gif" alt="TextInput promo code" width="325"> |
+| <img src="https://github.com/RonasIT/react-native-controlled-input/blob/86c6wprt8-add-lib/assets/promo-code-controlled-input.gif?raw=true" alt="ControlledInputView promo code" width="325"> | <img src="https://github.com/RonasIT/react-native-controlled-input/blob/86c6wprt8-add-lib/assets/promo-code-default-input.gif?raw=true" alt="TextInput promo code" width="325"> |
 
 ### Card expiry (MM/YY)
 
 | ControlledInputView | TextInput |
 | :-----------------: | :-------: |
-| <img src="assets/date-controlled-input.gif" alt="ControlledInputView date" width="325"> | <img src="./assets/date-default-input.gif" alt="TextInput date" width="325"> |
+| <img src="https://github.com/RonasIT/react-native-controlled-input/blob/86c6wprt8-add-lib/assets/date-controlled-input.gif?raw=true" alt="ControlledInputView date" width="325"> | <img src="https://github.com/RonasIT/react-native-controlled-input/blob/86c6wprt8-add-lib/assets/date-default-input.gif?raw=true" alt="TextInput date" width="325"> |
 
 ## Problem
 
@@ -53,7 +53,7 @@ export function Example() {
     <ControlledInputView
       ref={inputRef}
       value={value}
-      onTextChange={(text) => setValue(text.replace(/\d/g, ''))}
+      onChangeText={(text) => setValue(text.replace(/\d/g, ''))}
       style={styles.input}
       onFocus={() => {}}
       onBlur={() => {}}
@@ -84,7 +84,7 @@ inputRef.current?.blur();
 | Prop | Type | Description |
 |------|------|-------------|
 | `value` | `string` | Current input value. |
-| `onTextChange` | `(value: string) => void` | Called with the next text value. Filter it and update `value`. |
+| `onChangeText` | `(value: string) => void` | Called with the next text value. Filter it and update `value`. |
 | `onFocus` | `() => void` | Called when the text input is focused. |
 | `onBlur` | `() => void` | Called when the text input is blurred. |
 | `autoComplete` | `string` | Specifies autocomplete hints for the system. Same as React Native [`TextInput`](https://reactnative.dev/docs/textinput#autocomplete). |
