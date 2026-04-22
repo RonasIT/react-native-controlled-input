@@ -157,4 +157,14 @@ using namespace facebook::react;
     eventEmitter->onBlur(ControlledInputViewEventEmitter::OnBlur {});
 }
 
+- (void)controlledInputDidSubmitEditing:(RNControlledInput *)input
+{
+    if (_eventEmitter == nullptr) {
+        return;
+    }
+
+    const auto eventEmitter = std::static_pointer_cast<const ControlledInputViewEventEmitter>(_eventEmitter);
+    eventEmitter->onSubmitEditing(ControlledInputViewEventEmitter::OnSubmitEditing {});
+}
+
 @end

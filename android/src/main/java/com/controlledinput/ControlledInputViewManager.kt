@@ -106,7 +106,8 @@ class ControlledInputViewManager : SimpleViewManager<ControlledInputView>(),
   override fun getExportedCustomDirectEventTypeConstants(): MutableMap<String, Any> = mutableMapOf(
     TextChangeEvent.EVENT_NAME to MapBuilder.of("registrationName", "onChangeText"),
     FocusEvent.EVENT_NAME to MapBuilder.of("registrationName", "onFocus"),
-    BlurEvent.EVENT_NAME to MapBuilder.of("registrationName", "onBlur")
+    BlurEvent.EVENT_NAME to MapBuilder.of("registrationName", "onBlur"),
+    SubmitEditingEvent.EVENT_NAME to MapBuilder.of("registrationName", "onSubmitEditing")
   )
 
   override fun focus(view: ControlledInputView?) {

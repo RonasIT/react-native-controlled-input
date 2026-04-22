@@ -3,7 +3,7 @@ import {
   type ControlledInputViewRef,
 } from '@ronas-it/react-native-controlled-input';
 import { useRef, useState, type ReactElement } from 'react';
-import { StyleSheet, ScrollView, Button, View } from 'react-native';
+import { StyleSheet, ScrollView, Button, View, TextInput } from 'react-native';
 
 const formatPromoCode = (input: string): string => {
   let letters = '';
@@ -125,11 +125,16 @@ export default function App(): ReactElement {
         value={value}
         ref={inputRef}
         placeholder='Type something...'
+        returnKeyType='done'
         onChangeText={handleValueChange}
         style={[styles.input, isFocused && styles.focusedInput]}
         onFocus={handleFocus}
         onBlur={handleBlur}
+        onSubmitEditing={() => {
+          console.log('onSubmitEditing');
+        }}
       />
+      
       <Button title='Focus' onPress={focus} />
       <Button title='Blur' onPress={blur} />
 

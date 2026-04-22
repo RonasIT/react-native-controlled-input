@@ -23,6 +23,10 @@ export interface BlurEvent {
   // Empty event
 }
 
+export interface SubmitEditingEvent {
+  // Empty event (RN TextInput passes more fields; we keep payload empty)
+}
+
 export interface InputStyle {
   color?: ColorValue;
   fontSize?: Double;
@@ -52,6 +56,7 @@ export interface NativeProps extends ViewProps {
   onChangeText?: BubblingEventHandler<Readonly<TextChangeEvent>>;
   onFocus?: BubblingEventHandler<Readonly<FocusEvent>>;
   onBlur?: BubblingEventHandler<Readonly<BlurEvent>>;
+  onSubmitEditing?: BubblingEventHandler<Readonly<SubmitEditingEvent>>;
 }
 
 export interface NativeCommands {

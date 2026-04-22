@@ -12,6 +12,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.text.input.InputTransformation
+import androidx.compose.foundation.text.input.KeyboardActionHandler
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.foundation.text.input.byValue
 import androidx.compose.foundation.text.input.setTextAndPlaceCursorAtEnd
@@ -78,6 +79,7 @@ fun JetpackComposeView(
   onTextChange: (value: String) -> Unit,
   onFocus: (() -> Unit)? = null,
   onBlur: (() -> Unit)? = null,
+  onSubmitEditing: (() -> Unit)? = null,
   focusRequester: FocusRequester,
 ) {
   val state = remember { TextFieldState(value) }
@@ -194,6 +196,12 @@ fun JetpackComposeView(
           imeAction = toComposeImeAction(returnKeyTypeValue),
           autoCorrectEnabled = autoCorrectValue,
         ),
+        onKeyboardAction = onSubmitEditing?.let { cb ->
+          KeyboardActionHandler { performDefaultAction ->
+            cb()
+            performDefaultAction()
+          }
+        },
         interactionSource = interactionSource,
         cursorBrush = androidx.compose.ui.graphics.SolidColor(cursorColor),
         decorator = { innerTextField ->
@@ -314,5 +322,20 @@ class BlurEvent(
 
   companion object {
     const val EVENT_NAME = "onBlur"
+  }
+}
+
+class SubmitEditingEvent(
+  surfaceId: Int,
+  viewId: Int,
+) : Event<SubmitEditingEvent>(surfaceId, viewId) {
+  override fun getEventName() = EVENT_NAME
+
+  override fun getCoalescingKey(): Short = 0
+
+  override fun getEventData(): WritableMap? = Arguments.createMap()
+
+  companion object {
+    const val EVENT_NAME = "onSubmitEditing"
   }
 }

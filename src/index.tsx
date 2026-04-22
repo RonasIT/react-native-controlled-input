@@ -51,6 +51,9 @@ type ControlledInputFocusEvent = Parameters<
 type ControlledInputBlurEvent = Parameters<
   NonNullable<NativeProps['onBlur']>
 >[0];
+type ControlledInputSubmitEditingEvent = Parameters<
+  NonNullable<NativeProps['onSubmitEditing']>
+>[0];
 
 // All style props that Android handles via Compose instead of the native View layer
 const androidComposeHandledKeys = [
@@ -94,6 +97,7 @@ export const ControlledInputView = memo(
         onChangeText,
         onFocus,
         onBlur,
+        onSubmitEditing,
         selectionColor,
         placeholderTextColor,
         ...rest
@@ -196,6 +200,13 @@ export const ControlledInputView = memo(
         onBlur?.(e);
       };
 
+      const handleSubmitEditing = (e: ControlledInputSubmitEditingEvent): void => {
+        if (isNativePlatform && nativeRef.current != null) {
+          TextInputState.blurTextInput(nativeRef.current);
+        }
+        onSubmitEditing?.(e);
+      };
+
       useImperativeHandle(ref, () => ({
         blur: () => {
           if (!nativeRef.current || !isNativePlatform) return;
@@ -217,6 +228,7 @@ export const ControlledInputView = memo(
           onChangeText={handleTextChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          onSubmitEditing={handleSubmitEditing}
           ref={nativeRef}
         />
       );

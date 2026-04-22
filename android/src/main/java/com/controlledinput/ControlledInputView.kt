@@ -385,6 +385,13 @@ class ControlledInputView : LinearLayout, LifecycleOwner {
               .getEventDispatcherForReactTag(context as ReactContext, viewId)
               ?.dispatchEvent(BlurEvent(surfaceId, viewId))
           },
+          onSubmitEditing = {
+            val surfaceId = UIManagerHelper.getSurfaceId(context)
+            val viewId = this@ControlledInputView.id
+            UIManagerHelper
+              .getEventDispatcherForReactTag(context as ReactContext, viewId)
+              ?.dispatchEvent(SubmitEditingEvent(surfaceId, viewId))
+          },
           focusRequester = focusRequester
         )
       }
