@@ -34,6 +34,7 @@ type ForwardedTextInputProps = Pick<
   | 'placeholder'
   | 'placeholderTextColor'
   | 'selectionColor'
+  | 'autoCorrect'
 >;
 
 export type ControlledInputViewProps = Omit<

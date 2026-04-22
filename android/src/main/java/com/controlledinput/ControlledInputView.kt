@@ -354,6 +354,7 @@ class ControlledInputView : LinearLayout, LifecycleOwner {
           placeholderTextColor = viewModel.placeholderTextColor,
           selectionColor = viewModel.selectionColor,
           autoCapitalize = viewModel.autoCapitalize,
+          autoCorrect = viewModel.autoCorrect,
           keyboardType = viewModel.keyboardType,
           returnKeyType = viewModel.returnKeyType,
           onTextChange = { value ->

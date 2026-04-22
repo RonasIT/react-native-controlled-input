@@ -72,6 +72,7 @@ fun JetpackComposeView(
   placeholderTextColor: StateFlow<Int?>,
   selectionColor: StateFlow<Int?>,
   autoCapitalize: StateFlow<String?>,
+  autoCorrect: StateFlow<Boolean>,
   keyboardType: StateFlow<String?>,
   returnKeyType: StateFlow<String?>,
   onTextChange: (value: String) -> Unit,
@@ -83,6 +84,7 @@ fun JetpackComposeView(
   val style by inputStyle.collectAsState()
   val keyboardTypeValue by keyboardType.collectAsState()
   val autoCapitalizeValue by autoCapitalize.collectAsState()
+  val autoCorrectValue by autoCorrect.collectAsState()
   val returnKeyTypeValue by returnKeyType.collectAsState()
   val autoCompleteValue by autoComplete.collectAsState()
   val placeholderValue by placeholder.collectAsState()
@@ -190,6 +192,7 @@ fun JetpackComposeView(
           capitalization = toComposeCapitalization(autoCapitalizeValue),
           keyboardType = toComposeKeyboardType(keyboardTypeValue),
           imeAction = toComposeImeAction(returnKeyTypeValue),
+          autoCorrectEnabled = autoCorrectValue,
         ),
         interactionSource = interactionSource,
         cursorBrush = androidx.compose.ui.graphics.SolidColor(cursorColor),

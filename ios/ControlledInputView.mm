@@ -74,6 +74,10 @@ using namespace facebook::react;
         _inputView.autoCapitalize = newViewProps.autoCapitalize.empty() ? nil : [NSString stringWithUTF8String:newViewProps.autoCapitalize.c_str()];
     }
 
+    if (oldViewProps.autoCorrect != newViewProps.autoCorrect) {
+        _inputView.autoCorrect = newViewProps.autoCorrect;
+    }
+
     if (oldViewProps.placeholder != newViewProps.placeholder) {
         _inputView.placeholder = newViewProps.placeholder.empty() ? nil : [NSString stringWithUTF8String:newViewProps.placeholder.c_str()];
     }

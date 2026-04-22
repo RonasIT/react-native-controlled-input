@@ -9,6 +9,7 @@ import type {
   BubblingEventHandler,
   Double,
 } from 'react-native/Libraries/Types/CodegenTypes';
+import type { WithDefault } from 'react-native/Libraries/Types/CodegenTypesNamespace';
 
 export interface TextChangeEvent {
   value: string;
@@ -44,6 +45,7 @@ export interface NativeProps extends ViewProps {
   selectionColor?: ColorValue;
   autoComplete?: string;
   autoCapitalize?: string;
+  autoCorrect?: WithDefault<boolean, true>;
   keyboardType?: string;
   returnKeyType?: string;
   inputStyle?: InputStyle;

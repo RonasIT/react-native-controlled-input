@@ -40,6 +40,10 @@ public class RNControlledInput: UIView, UITextFieldDelegate {
         didSet { applyAutoCapitalize() }
     }
 
+    @objc public var autoCorrect: Bool = true {
+        didSet { applyAutoCorrect() }
+    }
+
     @objc public var keyboardType: String? {
         didSet { applyKeyboardType() }
     }
@@ -96,6 +100,7 @@ public class RNControlledInput: UIView, UITextFieldDelegate {
         applyFont()
         applyAutoComplete()
         applyAutoCapitalize()
+        applyAutoCorrect()
         applyKeyboardType()
         applyReturnKeyType()
         applyPlaceholder()
@@ -240,6 +245,10 @@ public class RNControlledInput: UIView, UITextFieldDelegate {
         default:
             textField.autocapitalizationType = .sentences
         }
+    }
+
+    private func applyAutoCorrect() {
+        textField.autocorrectionType = autoCorrect ? .default : .no
     }
 
     private func applyKeyboardType() {

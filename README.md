@@ -89,6 +89,7 @@ inputRef.current?.blur();
 | `onBlur` | `() => void` | Called when the text input is blurred. |
 | `autoComplete` | `string` | Specifies autocomplete hints for the system. Same as React Native [`TextInput`](https://reactnative.dev/docs/textinput#autocomplete). |
 | `autoCapitalize` | `string` | Can be `none`, `sentences`, `words`, `characters`. Same as React Native [`TextInput`](https://reactnative.dev/docs/textinput#autocapitalize). |
+| `autoCorrect` | `boolean` (default `true`) | Toggles auto-correct. Same as React Native [`TextInput`](https://reactnative.dev/docs/textinput#autocorrect). |
 | `keyboardType` | `string` | Determines which keyboard to open, e.g. `numeric`. Same as React Native [`TextInput`](https://reactnative.dev/docs/textinput#keyboardtype). |
 | `returnKeyType` | `string` | Determines how the return key should look. Same as React Native [`TextInput`](https://reactnative.dev/docs/textinput#returnkeytype). |
 | `placeholder` | `string` | The string that will be rendered before text input has been entered. |

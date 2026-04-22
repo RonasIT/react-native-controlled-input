@@ -14,6 +14,7 @@ class JetpackComposeViewModel : ViewModel() {
   private val _placeholderTextColor = MutableStateFlow<Int?>(null)
   private val _selectionColor = MutableStateFlow<Int?>(null)
   private val _autoCapitalize = MutableStateFlow<String?>(null)
+  private val _autoCorrect = MutableStateFlow(true)
   private val _keyboardType = MutableStateFlow<String?>(null)
   private val _returnKeyType = MutableStateFlow<String?>(null)
 
@@ -24,6 +25,7 @@ class JetpackComposeViewModel : ViewModel() {
   val placeholderTextColor: StateFlow<Int?> get() = _placeholderTextColor
   val selectionColor: StateFlow<Int?> get() = _selectionColor
   val autoCapitalize: StateFlow<String?> get() = _autoCapitalize
+  val autoCorrect: StateFlow<Boolean> get() = _autoCorrect
   val keyboardType: StateFlow<String?> get() = _keyboardType
   val returnKeyType: StateFlow<String?> get() = _returnKeyType
 
@@ -86,6 +88,10 @@ class JetpackComposeViewModel : ViewModel() {
 
   fun setAutoCapitalize(newValue: String?) {
     _autoCapitalize.value = newValue
+  }
+
+  fun setAutoCorrect(enabled: Boolean) {
+    _autoCorrect.value = enabled
   }
 
   fun setKeyboardType(newValue: String?) {

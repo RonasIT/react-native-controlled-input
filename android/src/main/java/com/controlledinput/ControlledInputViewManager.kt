@@ -61,6 +61,11 @@ class ControlledInputViewManager : SimpleViewManager<ControlledInputView>(),
     view.viewModel.setAutoCapitalize(autoCapitalize)
   }
 
+  @ReactProp(name = "autoCorrect", defaultBoolean = true)
+  override fun setAutoCorrect(view: ControlledInputView, autoCorrect: Boolean) {
+    view.viewModel.setAutoCorrect(autoCorrect)
+  }
+
   @ReactProp(name = "keyboardType")
   override fun setKeyboardType(view: ControlledInputView, keyboardType: String?) {
     view.viewModel.setKeyboardType(keyboardType)
