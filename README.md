@@ -87,6 +87,7 @@ inputRef.current?.blur();
 | `onChangeText` | `(value: string) => void` | Called with the next text value. Filter it and update `value`. |
 | `onFocus` | `() => void` | Called when the text input is focused. |
 | `onBlur` | `() => void` | Called when the text input is blurred. |
+| `onSubmitEditing` | `() => void` | Called when the text input is blurred. |
 | `autoComplete` | `string` | Specifies autocomplete hints for the system. Same as React Native [`TextInput`](https://reactnative.dev/docs/textinput#autocomplete). |
 | `autoCapitalize` | `string` | Can be `none`, `sentences`, `words`, `characters`. Same as React Native [`TextInput`](https://reactnative.dev/docs/textinput#autocapitalize). |
 | `autoCorrect` | `boolean` (default `true`) | Toggles auto-correct. Same as React Native [`TextInput`](https://reactnative.dev/docs/textinput#autocorrect). |
