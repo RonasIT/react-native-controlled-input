@@ -8,13 +8,13 @@ A controlled React Native input that lets you format and constrain the value exa
 
 | ControlledInputView | TextInput |
 | :-----------------: | :-------: |
-| <img src="https://github.com/RonasIT/react-native-controlled-input/blob/86c6wprt8-add-lib/assets/promo-code-controlled-input.gif?raw=true" alt="ControlledInputView promo code" width="325"> | <img src="https://github.com/RonasIT/react-native-controlled-input/blob/86c6wprt8-add-lib/assets/promo-code-default-input.gif?raw=true" alt="TextInput promo code" width="325"> |
+| <img src="https://github.com/RonasIT/react-native-controlled-input/blob/main/assets/promo-code-controlled-input.gif?raw=true" alt="ControlledInputView promo code" width="325"> | <img src="https://github.com/RonasIT/react-native-controlled-input/blob/main/assets/promo-code-default-input.gif?raw=true" alt="TextInput promo code" width="325"> |
 
 ### Card expiry (MM/YY)
 
 | ControlledInputView | TextInput |
 | :-----------------: | :-------: |
-| <img src="https://github.com/RonasIT/react-native-controlled-input/blob/86c6wprt8-add-lib/assets/date-controlled-input.gif?raw=true" alt="ControlledInputView date" width="325"> | <img src="https://github.com/RonasIT/react-native-controlled-input/blob/86c6wprt8-add-lib/assets/date-default-input.gif?raw=true" alt="TextInput date" width="325"> |
+| <img src="https://github.com/RonasIT/react-native-controlled-input/blob/main/assets/date-controlled-input.gif?raw=true" alt="ControlledInputView date" width="325"> | <img src="https://github.com/RonasIT/react-native-controlled-input/blob/main/assets/date-default-input.gif?raw=true" alt="TextInput date" width="325"> |
 
 ## Problem
 
